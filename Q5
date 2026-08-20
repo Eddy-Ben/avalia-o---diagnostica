@@ -1,0 +1,40 @@
+const aplicativo = {
+    nome: "Vida Pet",
+    categoria: "Cuidados com animais",
+    versao: "1.0.0",
+    gratuito: true,
+    quantidadeDownloads: 1500
+};
+
+const {
+    nome,
+    categoria,
+    versao,
+    gratuito,
+    quantidadeDownloads
+} = aplicativo;
+
+let tipoAcesso;
+
+if (gratuito) {
+    tipoAcesso = "Gratuito";
+} else {
+    tipoAcesso = "Pago";
+}
+
+let classificacao;
+
+if (quantidadeDownloads < 1000) {
+    classificacao = "Pouco conhecido";
+} else if (quantidadeDownloads < 10000) {
+    classificacao = "Em crescimento";
+} else {
+    classificacao = "Popular";
+}
+
+console.log("Aplicativo: " + nome);
+console.log("Categoria: " + categoria);
+console.log("Versão: " + versao);
+console.log("Quantidade de downloads: " + quantidadeDownloads);
+console.log("Tipo de acesso: " + tipoAcesso);
+console.log("Classificação: " + classificacao);

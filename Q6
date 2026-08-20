@@ -1,0 +1,56 @@
+const avaliacoes = [5, 8, 7, 10, 6, 9, 4];
+
+let soma = 0;
+let negativas = 0;
+let regulares = 0;
+let positivas = 0;
+
+let maior = avaliacoes[0];
+let menor = avaliacoes[0];
+
+for (let i = 0; i < avaliacoes.length; i++) {
+
+    let nota = avaliacoes[i];
+
+    soma = soma + nota;
+
+    let classificacao;
+
+    if (nota < 5) {
+        classificacao = "Avaliação negativa";
+        negativas++;
+    } else if (nota <= 7) {
+        classificacao = "Avaliação regular";
+        regulares++;
+    } else {
+        classificacao = "Avaliação positiva";
+        positivas++;
+    }
+
+    if (nota > maior) {
+        maior = nota;
+    }
+
+    if (nota < menor) {
+        menor = nota;
+    }
+
+    console.log(
+        "Posição: " + i +
+        " | Nota: " + nota +
+        " | Classificação: " + classificacao
+    );
+}
+
+let media = soma / avaliacoes.length;
+
+console.log("");
+console.log("Resumo das avaliações");
+console.log("Quantidade de avaliações: " + avaliacoes.length);
+console.log("Soma das avaliações: " + soma);
+console.log("Média das avaliações: " + media);
+console.log("Avaliações negativas: " + negativas);
+console.log("Avaliações regulares: " + regulares);
+console.log("Avaliações positivas: " + positivas);
+console.log("Maior avaliação: " + maior);
+console.log("Menor avaliação: " + menor);

@@ -1,0 +1,44 @@
+function calcularInternetRestante(total, utilizado) {
+
+    let restante = total - utilizado;
+
+    if (restante < 0) {
+        restante = 0;
+    }
+
+    return restante;
+}
+
+
+const classificarConsumo = (total, restante) => {
+
+    let percentual = (restante / total) * 100;
+
+    if (restante == 0) {
+        return "Plano esgotado";
+    } else if (percentual > 50) {
+        return "Consumo normal";
+    } else if (percentual >= 20) {
+        return "Atenção ao consumo";
+    } else {
+        return "Limite próximo do fim";
+    }
+};
+
+
+// Teste
+
+let total = 20;
+let utilizado = 12;
+
+let restante = calcularInternetRestante(total, utilizado);
+
+let situacao = classificarConsumo(total, restante);
+
+let percentual = (restante / total) * 100;
+
+console.log("Internet contratada:", total, "GB");
+console.log("Internet utilizada:", utilizado, "GB");
+console.log("Internet restante:", restante, "GB");
+console.log("Percentual restante:", percentual + "%");
+console.log("Situação:", situacao);

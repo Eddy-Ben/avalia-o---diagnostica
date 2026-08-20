@@ -1,0 +1,18 @@
+let nivelBateria = 100;
+let consumoPorCiclo = 15;
+
+while (nivelBateria > 0) {
+    nivelBateria = nivelBateria - consumoPorCiclo;
+
+    if (nivelBateria < 0) {
+        nivelBateria = 0;
+    }
+
+    console.log("Nível da bateria: " + nivelBateria + "%");
+
+    if (nivelBateria > 0 && nivelBateria <= 20) {
+        console.log("Aviso: bateria baixa!");
+    }
+}
+
+console.log("Bateria descarregada.");

@@ -1,0 +1,40 @@
+function calcularCompra(nome, precoUnitario, quantidade, formaPagamento) {
+
+    let valorBruto = precoUnitario * quantidade;
+
+    let desconto = 0;
+
+    // desconto de 10% para compras acima ou iguais a 200
+    if (valorBruto >= 200) {
+        desconto += valorBruto * 0.10;
+    }
+
+    // desconto adicional de 5% para Pix
+    if (formaPagamento.toLowerCase() === "pix") {
+        desconto += valorBruto * 0.05;
+    }
+
+    let valorFinal = valorBruto - desconto;
+
+    // exibição dos dados
+    console.log("Produto:", nome);
+    console.log("Preço unitário: R$", precoUnitario.toFixed(2));
+    console.log("Quantidade:", quantidade);
+    console.log("Forma de pagamento:", formaPagamento);
+    console.log("Valor bruto: R$", valorBruto.toFixed(2));
+    console.log("Desconto: R$", desconto.toFixed(2));
+    console.log("Valor final: R$", valorFinal.toFixed(2));
+
+    console.log("------------------------");
+}
+
+
+// testes
+
+calcularCompra("Camisas", 50, 2, "dinheiro");
+
+calcularCompra("Tênis", 250, 1, "cartao");
+
+calcularCompra("Livro", 30, 3, "pix");
+
+calcularCompra("Celular", 1000, 1, "pix");
